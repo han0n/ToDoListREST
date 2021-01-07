@@ -8,7 +8,7 @@
         <ToolbarItem Text="+" Clicked="OnAddItemClicked">
             <ToolbarItem.IconImageSource>
                 <OnPlatform x:TypeArguments="ImageSource">
-                    <On Platform="Android, UWP" Value="plus.png" />
+                    <On Platform="Android, UWP" Value="https://i.imgur.com/SP3noDW.png" />
                 </OnPlatform>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
@@ -16,17 +16,20 @@
 
     <Grid RowDefinitions="Auto, Auto, Auto" 
           ColumnDefinitions="Auto">
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,0.5">
-                <GradientStop Color="#2196F3" Offset="0"/>
-                <GradientStop Color="White" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+        
 
-        <Grid Grid.Row="0" RowDefinitions="Auto, Auto"
+        <Grid Grid.Row="0" RowDefinitions="Auto"
                   ColumnDefinitions="Auto"
-                  Padding="14,0,0,0">
+                  Padding="20,0,0,33">
 
+            <!-- Un padding de 33 hacia abajo para que el degradado baje un poco y pueda verse la fecha. -->
+
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="#2196F3" Offset="0" />
+                    <GradientStop Color="Transparent" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
 
             <Label Grid.Column="0"
                        Text="Mi día"
@@ -37,16 +40,19 @@
 
             <Label Grid.Column="0"  
                        x:Name="lblDiaHoy"
-                       Grid.Row="1"
+                       Grid.Row="0"
                    TextColor="White"
-                   FontSize="Default"/>
+                   FontSize="Default"
+                   Padding="0,30,0,0"/>
+
+            <!-- Un padding de 30 hacia arriba para que se situe justo abajo del otro label. Si los
+            dispusiera en filas distintas el espacio por defecto que hay entre ellos es mucho. -->
 
 
         </Grid>
     
 
-        <ListView x:Name="listView" 
-                  Margin="20" 
+        <ListView x:Name="listView"
                   ItemSelected="OnItemSelected"
                   Grid.Row="1">
             <ListView.ItemTemplate>
