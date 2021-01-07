@@ -8,7 +8,8 @@ namespace TodoREST
 		public TodoListPage ()
 		{
 			InitializeComponent ();
-		}
+            MuestraFecha();
+        }
 
 		protected async override void OnAppearing ()
 		{
@@ -35,5 +36,20 @@ namespace TodoREST
                 BindingContext = e.SelectedItem as TodoItem
             });
 		}
-	}
+
+        #region Métodos Propios
+
+        private void MuestraFecha()
+        {
+            var idioma = new System.Globalization.CultureInfo("es-ES");
+            var dia = idioma.DateTimeFormat.GetDayName(DateTime.Today.DayOfWeek);
+            var fechaDia = DateTime.Now.Day.ToString();
+            var mes = idioma.DateTimeFormat.GetMonthName(DateTime.Now.Month);
+
+            lblDiaHoy.Text += dia.ToString() + ", " + fechaDia + " de " + mes;
+        }
+
+        #endregion
+
+    }
 }
