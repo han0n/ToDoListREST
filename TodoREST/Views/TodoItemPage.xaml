@@ -14,9 +14,10 @@
 		<Switch IsToggled="{Binding Path=Done}" />
 
         <Stepper 
-                 Value="{Binding Path=Prioridad}" 
+            Value="{Binding Path=Prioridad}" 
+            ValueChanged="Stepper_ValueChanged"
             Minimum="0"
-            Maximum="1"/>
+            Maximum="3"/>
 
         <Button Text="Save" 
                 Clicked="OnSaveButtonClicked" />

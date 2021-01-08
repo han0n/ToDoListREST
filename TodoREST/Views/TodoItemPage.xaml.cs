@@ -17,7 +17,6 @@ namespace TodoREST
 		async void OnSaveButtonClicked (object sender, EventArgs e)
 		{
 			var todoItem = (TodoItem)BindingContext;
-			if (todoItem.Prioridad == 0) todoItem.Color = "Yellow";
 			await App.TodoManager.SaveTaskAsync (todoItem, isNewItem);
 			await Navigation.PopAsync ();
 		}
@@ -34,5 +33,36 @@ namespace TodoREST
 			await Navigation.PopAsync ();
 		}
 
+        private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+			var todoItem = (TodoItem)BindingContext;
+            double valor = e.NewValue;
+
+            if (valor == 3)
+            {
+                todoItem.Color = "LightCoral";
+            }
+            else
+            {
+                if (valor == 2)
+                {
+                    todoItem.Color = "LightSalmon";
+                }
+                else
+                {
+                    if (valor == 1)
+                    {
+                        todoItem.Color = "#0F0";
+                    }
+                    else
+                    {
+                        if (valor == 0)
+                        {
+                            todoItem.Color = "#F0F";
+                        }
+                    }
+                }
+            }
+        }
     }
 }

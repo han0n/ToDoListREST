@@ -54,29 +54,58 @@
 
         <ListView x:Name="listView"
                   ItemSelected="OnItemSelected"
-                  Grid.Row="1">
+                  Grid.Row="1"
+                  HasUnevenRows="True" 
+                  SeparatorVisibility="None"
+                  FlowDirection="LeftToRight" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
+                        <Frame  BorderColor="White"
+                                CornerRadius="0"
+                                Padding="0"
+                                Margin="0"
+                                BackgroundColor="Transparent">
+                            <Frame  BorderColor="{Binding Color}"
+                                    CornerRadius="0"
+                                    Padding="0"
+                                    Margin="1,-1,-1,-1"
+                                    BackgroundColor="Transparent">
+                                <Frame  BorderColor="{Binding Color}"
+                                        CornerRadius="0"
+                                        Padding="0"
+                                        Margin="1,-1,-1,-1"
+                                        BackgroundColor="Transparent">
+                                    <Frame BorderColor="{Binding Color}"
+                                           CornerRadius="0"
+                                           Padding="0"
+                                           Margin="1,-1,-1,-1"
+                                           BackgroundColor="Transparent">
+                                        <Frame BorderColor="{Binding Color}"
+                                               CornerRadius="0"
+                                               HasShadow="True"
+                                               Padding="12"
+                                               Margin="2,-2,-2,-2"
+                                               BackgroundColor="Transparent">
 
-                        <Grid ColumnDefinitions="Auto, Auto"
-                            RowDefinitions="Auto"
-                            Padding="20,0,0,0" >
-                            <Grid.Background>
-                                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
-                                    <GradientStop Color="{Binding Color}" Offset="0" />
-                                    <GradientStop Color="Transparent" Offset="1"/>
-                                </LinearGradientBrush>
-                            </Grid.Background>
+                                            <Grid ColumnDefinitions="Auto, Auto, Auto"
+                                                  RowDefinitions="Auto"
+                                                  Padding="20,0,0,0" >
 
-                            <Label Text="{Binding Name}" 
-                                   VerticalTextAlignment="Center"
-                                   Grid.Column="0" />
-                            <Image Source="check.png" 
-                                   IsVisible="{Binding Done}" 
-                                   Grid.Column="1" />
+                                                <Label Text="{Binding Name}" 
+                                                       VerticalTextAlignment="Center"
+                                                       Grid.Column="1" />
+                                                <Image Source="check.png" 
+                                                       IsVisible="{Binding Done}" 
+                                                       Grid.Column="2" />
 
-                        </Grid>
+                                            </Grid>
+
+                                        </Frame>
+                                    </Frame>
+                                </Frame>
+                            </Frame>
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

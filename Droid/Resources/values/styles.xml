@@ -19,7 +19,10 @@
         <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
         <item name="windowActionModeOverlay">true</item>
-        <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+		<!-- Para que no se sombree de naranja cuando se selecciona un elemento de la ListView-->
+		<item name="android:colorActivatedHighlight">#FFFFFF</item>
+
+		<item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
     </style>
     <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorAccent">#FF4081</item>
