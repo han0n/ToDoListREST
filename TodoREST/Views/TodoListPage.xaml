@@ -50,7 +50,7 @@
 
 
         </Grid>
-    
+
 
         <ListView x:Name="listView"
                   ItemSelected="OnItemSelected"
@@ -58,14 +58,25 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="20,0,0,0" 
-                                     HorizontalOptions="StartAndExpand"
-                                     Orientation="Horizontal">
+
+                        <Grid ColumnDefinitions="Auto, Auto"
+                            RowDefinitions="Auto"
+                            Padding="20,0,0,0" >
+                            <Grid.Background>
+                                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                                    <GradientStop Color="{Binding Color}" Offset="0" />
+                                    <GradientStop Color="Transparent" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Grid.Background>
+
                             <Label Text="{Binding Name}" 
-                                   VerticalTextAlignment="Center" />
+                                   VerticalTextAlignment="Center"
+                                   Grid.Column="0" />
                             <Image Source="check.png" 
-                                   IsVisible="{Binding Done}" />
-                        </StackLayout>
+                                   IsVisible="{Binding Done}" 
+                                   Grid.Column="1" />
+
+                        </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

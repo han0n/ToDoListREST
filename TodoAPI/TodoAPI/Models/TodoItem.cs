@@ -14,5 +14,9 @@ namespace TodoAPI.Models
         public string Notes { get; set; }
 
         public bool Done { get; set; }
+
+        public int Prioridad { get; set; }
+
+        public string Color { get; set; }
     }
 }

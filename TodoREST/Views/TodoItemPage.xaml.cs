@@ -11,11 +11,13 @@ namespace TodoREST
 		{
 			InitializeComponent ();
 			isNewItem = isNew;
+
 		}
 
 		async void OnSaveButtonClicked (object sender, EventArgs e)
 		{
 			var todoItem = (TodoItem)BindingContext;
+			if (todoItem.Prioridad == 0) todoItem.Color = "Yellow";
 			await App.TodoManager.SaveTaskAsync (todoItem, isNewItem);
 			await Navigation.PopAsync ();
 		}
@@ -31,5 +33,6 @@ namespace TodoREST
 		{
 			await Navigation.PopAsync ();
 		}
-	}
+
+    }
 }
