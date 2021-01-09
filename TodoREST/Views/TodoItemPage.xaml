@@ -4,6 +4,23 @@
 			 x:Class="TodoREST.TodoItemPage" 
 			 Title="Nueva Tarea">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="OnDeleteButtonClicked">
+            <ToolbarItem.IconImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="Android, UWP" Value="https://i.imgur.com/3qbMc3f.png" />
+                </OnPlatform>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+        <ToolbarItem Clicked="OnSaveButtonClicked">
+            <ToolbarItem.IconImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="Android, UWP" Value="https://i.imgur.com/5eP1JyF.png" />
+                </OnPlatform>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
@@ -24,7 +41,8 @@
             <Switch IsToggled="{Binding Path=Done}" />
 
             <Picker Title="Seleccione la Prioridad"
-            TitleColor="Red" SelectedItem="{Binding Path=Prioridad}" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                    TitleColor="White" SelectedIndex="{Binding Path=Prioridad}" 
+                    SelectedIndexChanged="Picker_SelectedIndexChanged">
                 <Picker.Items>
                     <x:String>Ninguna</x:String>
                     <x:String>Baja</x:String>
@@ -32,13 +50,6 @@
                     <x:String>Urgente</x:String>
                 </Picker.Items>
             </Picker>
-
-            <Button Text="Save" 
-                Clicked="OnSaveButtonClicked" />
-            <Button Text="Delete"
-                Clicked="OnDeleteButtonClicked" />
-            <Button Text="Cancel" 
-                Clicked="OnCancelButtonClicked" />
 
         </StackLayout>
         
