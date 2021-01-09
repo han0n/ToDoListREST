@@ -2,7 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 			 x:Class="TodoREST.TodoItemPage" 
-			 Title="Nueva Tarea">
+			 Title="">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label x:Name="Titulo" Text="" VerticalOptions="Center" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="OnDeleteButtonClicked">

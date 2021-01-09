@@ -54,25 +54,31 @@ namespace TodoAPI.Services
             var todoItem1 = new TodoItem
             {
                 ID = "6bb8a868-dba1-4f1a-93b7-24ebce87e243",
-                Name = "Learn app development",
-                Notes = "Attend Xamarin University",
-                Done = true
+                Name = "Aprender a desarrollar apps",
+                Notes = "Asistir a la Universidad Xamarin",
+                Done = true,
+                Prioridad = 3,
+                Color = "Red"
             };
 
             var todoItem2 = new TodoItem
             {
                 ID = "b94afb54-a1cb-4313-8af3-b7511551b33b",
-                Name = "Develop apps",
-                Notes = "Use Xamarin Studio/Visual Studio",
-                Done = false
+                Name = "Desarrollar apps",
+                Notes = "Usar Xamarin Studio/Visual Studio",
+                Done = false,
+                Prioridad = 2,
+                Color = "Yellow"
             };
 
             var todoItem3 = new TodoItem
             {
                 ID = "ecfa6f80-3671-4911-aabe-63cc442c1ecf",
-                Name = "Publish apps",
-                Notes = "All app stores",
+                Name = "Publicar apps",
+                Notes = "En todas las app stores",
                 Done = false,
+                Prioridad = 1,
+                Color = "Green"
             };
 
             _todoList.Add(todoItem1);

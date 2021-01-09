@@ -9,7 +9,7 @@
             <Frame CornerRadius="999" BorderColor="White" HasShadow="True" Padding="0"  Margin="0">
                 <Image Source="f1.jpg" WidthRequest="45" HeightRequest="45"/>
             </Frame>
-            <Label Text="David Góngora" VerticalOptions="Center" TextColor="White" Margin="10,0,0,0"/>
+            <Label Text="David Góngora" VerticalOptions="Center" TextColor="White" Margin="5,0,0,0" FontSize="Medium" FontAttributes="Bold"/>
         </StackLayout>
     </NavigationPage.TitleView>
     
