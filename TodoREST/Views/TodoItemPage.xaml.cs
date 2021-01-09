@@ -33,36 +33,34 @@ namespace TodoREST
 			await Navigation.PopAsync ();
 		}
 
-        private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
-        {
-			var todoItem = (TodoItem)BindingContext;
-            double valor = e.NewValue;
 
-            if (valor == 3)
+        private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var todoItem = (TodoItem)BindingContext;
+            var picker = sender as Picker;
+
+            if (picker.SelectedIndex == 0)
             {
                 todoItem.Color = "LightCoral";
             }
-            else
+
+            if (picker.SelectedIndex == 1)
             {
-                if (valor == 2)
-                {
-                    todoItem.Color = "LightSalmon";
-                }
-                else
-                {
-                    if (valor == 1)
-                    {
-                        todoItem.Color = "#0F0";
-                    }
-                    else
-                    {
-                        if (valor == 0)
-                        {
-                            todoItem.Color = "#F0F";
-                        }
-                    }
-                }
+                todoItem.Color = "LightSalmon";
             }
+
+            if (picker.SelectedIndex == 2)
+            {
+                todoItem.Color = "#0F0";
+            }
+
+            if (picker.SelectedIndex == 3)
+            {
+                todoItem.Color = "#F0F";
+            }
+
+
+
         }
     }
 }

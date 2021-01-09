@@ -3,27 +3,44 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 			 x:Class="TodoREST.TodoItemPage" 
 			 Title="Nueva Tarea">
-	<StackLayout Margin="20">
-		<Label Text="Name" />
-		<Entry Text="{Binding Path=Name}" 
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                <GradientStop Color="#2196F3" Offset="0" />
+                <GradientStop Color="Transparent" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <StackLayout Margin="20">
+
+            <Label Text="Name" />
+            <Entry Text="{Binding Path=Name}" 
                Placeholder="Enter item" />
-		<Label Text="Notes" />
-		<Entry Text="{Binding Path=Notes}"
+            <Label Text="Notes" />
+            <Entry Text="{Binding Path=Notes}"
                Placeholder="Enter notes" />
-		<Label Text="Done" />
-		<Switch IsToggled="{Binding Path=Done}" />
+            <Label Text="Done" />
+            <Switch IsToggled="{Binding Path=Done}" />
 
-        <Stepper 
-            Value="{Binding Path=Prioridad}" 
-            ValueChanged="Stepper_ValueChanged"
-            Minimum="0"
-            Maximum="3"/>
+            <Picker Title="Seleccione la Prioridad"
+            TitleColor="Red" SelectedItem="{Binding Path=Prioridad}" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Ninguna</x:String>
+                    <x:String>Baja</x:String>
+                    <x:String>Moderada</x:String>
+                    <x:String>Urgente</x:String>
+                </Picker.Items>
+            </Picker>
 
-        <Button Text="Save" 
+            <Button Text="Save" 
                 Clicked="OnSaveButtonClicked" />
-		<Button Text="Delete"
+            <Button Text="Delete"
                 Clicked="OnDeleteButtonClicked" />
-		<Button Text="Cancel" 
+            <Button Text="Cancel" 
                 Clicked="OnCancelButtonClicked" />
-	</StackLayout>
+
+        </StackLayout>
+        
+	</Grid>
 </ContentPage>
