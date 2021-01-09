@@ -12,6 +12,15 @@ namespace TodoREST
 			InitializeComponent ();
 			isNewItem = isNew;
 
+			if (isNewItem == true)
+            {
+				Titulo.Text = "Crear Tarea";
+            }
+            else
+            {
+				Titulo.Text = "Modificar Tarea";
+            }
+
 		}
 
 		async void OnSaveButtonClicked (object sender, EventArgs e)
