@@ -31,25 +31,41 @@
         
         <StackLayout Margin="20">
 
-            <Label Text="Name" />
+            <Label Text="Título" />
             <Entry Text="{Binding Path=Name}" 
-               Placeholder="Enter item" />
-            <Label Text="Notes" />
+               Placeholder="Introducir tarea" />
+            <Label Text="Notas"  />
             <Entry Text="{Binding Path=Notes}"
-               Placeholder="Enter notes" />
-            <Label Text="Done" />
-            <Switch IsToggled="{Binding Path=Done}" />
+               Placeholder="Introducir notas"  />
 
-            <Picker Title="Seleccione la Prioridad"
-                    TitleColor="White" SelectedIndex="{Binding Path=Prioridad}" 
-                    SelectedIndexChanged="Picker_SelectedIndexChanged">
-                <Picker.Items>
-                    <x:String>Ninguna</x:String>
-                    <x:String>Baja</x:String>
-                    <x:String>Moderada</x:String>
-                    <x:String>Urgente</x:String>
-                </Picker.Items>
-            </Picker>
+            <Grid ColumnDefinitions="*, *">
+                
+                <StackLayout Grid.Column="0">
+                    <Label Text="Prioridad" VerticalOptions="Center" />
+                    <Picker Title="Seleccione la Prioridad"
+                    TitleColor="#1976D2" SelectedIndex="{Binding Path=Prioridad}" 
+                    SelectedIndexChanged="Picker_SelectedIndexChanged"
+                            HorizontalTextAlignment="Center" >
+                        <Picker.Items>
+                            <x:String>Ninguna</x:String>
+                            <x:String>Baja</x:String>
+                            <x:String>Moderada</x:String>
+                            <x:String>Urgente</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+
+                <StackLayout Grid.Column="1" Orientation="Vertical">
+                    <Label Text="Realizado"  Margin="0,0,0,10"/>
+                    <Switch IsToggled="{Binding Path=Done}" HorizontalOptions="Center"/>
+                </StackLayout>
+                
+            </Grid>
+
+           
+
+
+
 
         </StackLayout>
         

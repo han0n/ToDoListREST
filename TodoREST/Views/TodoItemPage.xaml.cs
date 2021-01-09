@@ -39,27 +39,25 @@ namespace TodoREST
             var todoItem = (TodoItem)BindingContext;
             var picker = sender as Picker;
 
-            if (picker.SelectedIndex == 0)
+			switch (picker.SelectedIndex)
             {
-                todoItem.Color = "LightCoral";
-            }
-
-            if (picker.SelectedIndex == 1)
-            {
-                todoItem.Color = "LightSalmon";
-            }
-
-            if (picker.SelectedIndex == 2)
-            {
-                todoItem.Color = "#0F0";
-            }
-
-            if (picker.SelectedIndex == 3)
-            {
-                todoItem.Color = "#F0F";
-            }
-
-
+				case 0:
+					todoItem.Color = "Transparent";
+					todoItem.Prioridad = 0;
+					break;
+				case 1:
+					todoItem.Color = "Green";
+					todoItem.Prioridad = 1;
+					break;
+				case 2:
+					todoItem.Color = "Yellow";
+					todoItem.Prioridad = 2;
+					break;
+				case 3:
+					todoItem.Color = "Red";
+					todoItem.Prioridad = 3;
+					break;
+			}
 
         }
     }
