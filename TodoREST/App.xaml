@@ -4,6 +4,7 @@
              x:Class="TodoREST.App">
     <Application.Resources>
         <ResourceDictionary>
+            
             <Style x:Key="Rotulo" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="Medium"/>
@@ -21,15 +22,40 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
                 <Setter Property="TitleColor" Value="#1976D2"/>
                 <Setter Property="Title" Value="Seleccione la Prioridad"/>
+                <Setter Property="IsVisible" Value="False" />
             </Style>
 
-            <Style x:Key="Frame" TargetType="Frame">
+            <Style x:Key="Tarea" TargetType="Frame">
                 <Setter Property="BorderColor" Value="White"/>
                 <Setter Property="CornerRadius" Value="0"/>
                 <Setter Property="Padding" Value="0"/>
                 <Setter Property="Margin" Value="0"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>
                 <Setter Property="HasShadow" Value="True"/>
+            </Style>
+
+            <Style x:Key="Prioridad" TargetType="Frame">
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="BorderColor" Value="#1976D2"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="BackgroundColor" Value="{Binding Path=Color}"/>
+                <Setter Property="HasShadow" Value="True"/>
+            </Style>
+
+            <Style x:Key="Cabecera" TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="Title"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Text" Value="Mi día"/>
+            </Style>
+
+            <Style x:Key="Fecha" TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="Padding" Value="0,30,0,0"/>
             </Style>
 
         </ResourceDictionary>

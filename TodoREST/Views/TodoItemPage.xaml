@@ -46,24 +46,23 @@
                    Placeholder="Introducir notas"
                    Style="{StaticResource Entrada}" />
 
-            <Grid ColumnDefinitions="*, *">
+            <Grid ColumnDefinitions="*, *" Margin="0,10,0,0">
                 
                 <StackLayout Grid.Column="0" Orientation="Horizontal">
                     <Label Text="Prioridad" />
                     <Picker x:Name="ListaPrioridad" 
                             SelectedIndex="{Binding Path=Prioridad}" 
                             SelectedIndexChanged="Picker_SelectedIndexChanged"
-                            Style="{StaticResource Selector}"
-                            IsVisible="False">
+                            Style="{StaticResource Selector}" >
                         <Picker.Items>
                             <x:String>Ninguna</x:String>
-                            <x:String>Baja</x:String>
+                            <x:String>Normal</x:String>
                             <x:String>Moderada</x:String>
                             <x:String>Urgente</x:String>
                         </Picker.Items>
                     </Picker>
-                    <Frame Style="{StaticResource Frame}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" CornerRadius="8" BorderColor="#1976D2" BackgroundColor="{Binding Path=Color}">
-                        <Label x:Name="PickerLabel" FontSize="Medium" Margin="4,0,4,3" TextColor="White">
+                    <Frame Style="{StaticResource Prioridad}" >
+                        <Label x:Name="PickerLabel" FontSize="Subtitle" Margin="4,0,4,3" TextColor="White">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                             </Label.GestureRecognizers>
@@ -74,7 +73,9 @@
 
                 <StackLayout Grid.Column="1" Orientation="Horizontal">
                     <Label Text="Realizado"/>
-                    <Switch IsToggled="{Binding Path=Done}" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"/>
+                    <Switch IsToggled="{Binding Path=Done}" 
+                            HorizontalOptions="EndAndExpand" 
+                            VerticalOptions="EndAndExpand" />
                 </StackLayout>
                 
             </Grid>

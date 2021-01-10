@@ -6,7 +6,7 @@
     
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Frame CornerRadius="55" BorderColor="White" HasShadow="True" Padding="0"  Margin="0">
+            <Frame CornerRadius="50" Padding="0"  Margin="0">
                 <Image Source="f1.jpg" WidthRequest="45" HeightRequest="45"/>
             </Frame>
             <Label Text="David Góngora" Style="{StaticResource Rotulo}"  Margin="5,0,0,0" />
@@ -40,19 +40,10 @@
                 </LinearGradientBrush>
             </Grid.Background>
 
-            <Label Grid.Column="0"
-                       Text="Mi día"
-                       Grid.Row="0"
-                   TextColor="White"
-                   FontSize="Title"
-                   FontAttributes="Bold"/>
+            <Label Grid.Column="0" Grid.Row="0" Style="{StaticResource Cabecera}" />
 
-            <Label Grid.Column="0"  
-                       x:Name="lblDiaHoy"
-                       Grid.Row="0"
-                   TextColor="White"
-                   FontSize="Default"
-                   Padding="0,30,0,0"/>
+            <Label Grid.Column="0" Grid.Row="0"
+                   x:Name="lblDiaHoy" Style="{StaticResource Fecha}" />
 
             <!-- Un padding de 30 hacia arriba para que se situe justo abajo del otro label. Si los
             dispusiera en filas distintas el espacio por defecto que hay entre ellos es mucho. -->
@@ -71,7 +62,7 @@
                 <DataTemplate>
                     <ViewCell>
 
-                        <Frame Style="{StaticResource Frame}">
+                        <Frame Style="{StaticResource Tarea}">
                             
                             <Grid ColumnDefinitions="1*, 40*" Padding="0">
                                 
