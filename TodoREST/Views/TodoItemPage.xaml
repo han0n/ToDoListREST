@@ -6,7 +6,7 @@
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Label x:Name="Titulo" Text="" VerticalOptions="Center" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+            <Label x:Name="Titulo" Style="{StaticResource Rotulo}"/>
         </StackLayout>
     </NavigationPage.TitleView>
 

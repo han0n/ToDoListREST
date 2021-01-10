@@ -1,16 +1,18 @@
-﻿using Xamarin.Forms;
+﻿using TodoREST;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace TodoREST
 {
-	public class App : Application
+	public partial class App : Application
 	{
 		public static TodoItemManager TodoManager { get; private set; }
 
 		public App ()
 		{
-			Device.SetFlags(new string[] { "Brush_Experimental", "Shapes_Experimental" });
+			Device.SetFlags(new string[] { "Brush_Experimental" });
+			InitializeComponent();
 			TodoManager = new TodoItemManager (new RestService ());
 			MainPage = new NavigationPage (new TodoListPage ());
 		}
