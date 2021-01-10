@@ -28,6 +28,13 @@ namespace TodoREST
 			var todoItem = (TodoItem)BindingContext;
 			await App.TodoManager.SaveTaskAsync (todoItem, isNewItem);
 			await Navigation.PopAsync ();
+
+			if (todoItem.Name != null && todoItem.Notes != null)
+            {
+				string mensaje = "Se ha guardado con éxito";
+				DependencyService.Get<IMessage>().ShortAlert(mensaje);
+			}
+
 		}
 
 		async void OnDeleteButtonClicked (object sender, EventArgs e)
@@ -35,6 +42,13 @@ namespace TodoREST
 			var todoItem = (TodoItem)BindingContext;
 			await App.TodoManager.DeleteTaskAsync (todoItem);
 			await Navigation.PopAsync ();
+
+			if (todoItem.Name != null && todoItem.Notes != null)
+			{
+				string mensaje = "Se ha borrado con éxito";
+				DependencyService.Get<IMessage>().ShortAlert(mensaje);
+			}
+			
 		}
 
 		async void OnCancelButtonClicked (object sender, EventArgs e)
