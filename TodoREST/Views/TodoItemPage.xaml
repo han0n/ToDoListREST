@@ -39,19 +39,22 @@
 
             <Label Text="Título" />
             <Entry Text="{Binding Path=Name}" 
-               Placeholder="Introducir tarea" />
+                   Placeholder="Introducir tarea" 
+                   Style="{StaticResource Entrada}" />
             <Label Text="Notas"  />
             <Entry Text="{Binding Path=Notes}"
-               Placeholder="Introducir notas"  />
+                   Placeholder="Introducir notas"
+                   Style="{StaticResource Entrada}" />
 
             <Grid ColumnDefinitions="*, *">
                 
-                <StackLayout Grid.Column="0">
-                    <Label Text="Prioridad" VerticalOptions="Center" />
-                    <Picker Title="Seleccione la Prioridad"
-                    TitleColor="#1976D2" SelectedIndex="{Binding Path=Prioridad}" 
-                    SelectedIndexChanged="Picker_SelectedIndexChanged"
-                            HorizontalTextAlignment="Center" >
+                <StackLayout Grid.Column="0" Orientation="Horizontal">
+                    <Label Text="Prioridad" />
+                    <Picker x:Name="ListaPrioridad" 
+                            SelectedIndex="{Binding Path=Prioridad}" 
+                            SelectedIndexChanged="Picker_SelectedIndexChanged"
+                            Style="{StaticResource Selector}"
+                            IsVisible="False">
                         <Picker.Items>
                             <x:String>Ninguna</x:String>
                             <x:String>Baja</x:String>
@@ -59,11 +62,19 @@
                             <x:String>Urgente</x:String>
                         </Picker.Items>
                     </Picker>
+                    <Frame Style="{StaticResource Frame}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" CornerRadius="8" BorderColor="#1976D2" BackgroundColor="{Binding Path=Color}">
+                        <Label x:Name="PickerLabel" FontSize="Medium" Margin="4,0,4,3" TextColor="White">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Frame>
+                    
                 </StackLayout>
 
-                <StackLayout Grid.Column="1" Orientation="Vertical">
-                    <Label Text="Realizado"  Margin="0,0,0,10"/>
-                    <Switch IsToggled="{Binding Path=Done}" HorizontalOptions="Center"/>
+                <StackLayout Grid.Column="1" Orientation="Horizontal">
+                    <Label Text="Realizado"/>
+                    <Switch IsToggled="{Binding Path=Done}" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"/>
                 </StackLayout>
                 
             </Grid>

@@ -11,6 +11,27 @@
                 <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
 
+            <Style x:Key="Entrada" TargetType="Entry">
+                <Setter Property="FontSize" Value="Subtitle"/>
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+            </Style>
+
+            <Style x:Key="Selector" TargetType="Picker">
+                <Setter Property="FontSize" Value="Header"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="TitleColor" Value="#1976D2"/>
+                <Setter Property="Title" Value="Seleccione la Prioridad"/>
+            </Style>
+
+            <Style x:Key="Frame" TargetType="Frame">
+                <Setter Property="BorderColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="HasShadow" Value="True"/>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

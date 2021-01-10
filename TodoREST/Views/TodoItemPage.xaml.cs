@@ -45,29 +45,37 @@ namespace TodoREST
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var todoItem = (TodoItem)BindingContext;
+			PickerLabel.Text = ListaPrioridad.Items[ListaPrioridad.SelectedIndex];
+			// PickerLabel.Text = PickerList.SelectedItem.ToString() ;
+
+			var todoItem = (TodoItem)BindingContext;
             var picker = sender as Picker;
 
 			switch (picker.SelectedIndex)
             {
 				case 0:
-					todoItem.Color = "Transparent";
+					todoItem.Color = "DarkGray";
 					todoItem.Prioridad = 0;
 					break;
 				case 1:
-					todoItem.Color = "Green";
+					todoItem.Color = "LimeGreen";
 					todoItem.Prioridad = 1;
 					break;
 				case 2:
-					todoItem.Color = "Yellow";
+					todoItem.Color = "Gold";
 					todoItem.Prioridad = 2;
 					break;
 				case 3:
-					todoItem.Color = "Red";
+					todoItem.Color = "FireBrick";
 					todoItem.Prioridad = 3;
 					break;
 			}
 
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+			ListaPrioridad.Focus();
+		}
     }
 }
