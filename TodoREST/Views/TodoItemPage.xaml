@@ -61,7 +61,7 @@
                             <x:String>Urgente</x:String>
                         </Picker.Items>
                     </Picker>
-                    <Frame Style="{StaticResource Prioridad}" >
+                    <Frame Style="{StaticResource Prioridad}" BackgroundColor="{Binding Path=Color}" >
                         <Label x:Name="PickerLabel" FontSize="Subtitle" Margin="4,0,4,3" TextColor="White">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>

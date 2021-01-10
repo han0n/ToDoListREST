@@ -58,7 +58,7 @@ namespace TodoAPI.Services
                 Notes = "Asistir a la Universidad Xamarin",
                 Done = true,
                 Prioridad = 3,
-                Color = "Red"
+                Color = "FireBrick"
             };
 
             var todoItem2 = new TodoItem
@@ -68,7 +68,7 @@ namespace TodoAPI.Services
                 Notes = "Usar Xamarin Studio/Visual Studio",
                 Done = false,
                 Prioridad = 2,
-                Color = "Yellow"
+                Color = "Gold"
             };
 
             var todoItem3 = new TodoItem
@@ -78,7 +78,7 @@ namespace TodoAPI.Services
                 Notes = "En todas las app stores",
                 Done = false,
                 Prioridad = 1,
-                Color = "Green"
+                Color = "LimeGreen"
             };
 
             _todoList.Add(todoItem1);
