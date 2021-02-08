@@ -5,10 +5,13 @@ namespace TodoREST
 {
 	public partial class TodoListPage : ContentPage
 	{
-		public TodoListPage ()
+		public TodoListPage (string imagen, string nombre)
 		{
-			InitializeComponent ();
+            InitializeComponent ();
+            NavigationPage.SetHasBackButton(this, false);
             MuestraFecha();
+            Avatar.Source = imagen;
+            Nombre.Text = nombre;
         }
 
 		protected async override void OnAppearing ()

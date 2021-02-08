@@ -1,4 +1,5 @@
 ﻿using TodoREST;
+using TodoREST.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,7 +15,7 @@ namespace TodoREST
 			Device.SetFlags(new string[] { "Brush_Experimental" });
 			InitializeComponent();
 			TodoManager = new TodoItemManager (new RestService ());
-			MainPage = new NavigationPage (new TodoListPage ());
+			MainPage = new NavigationPage (new UserListPage ());
 		}
 
 		protected override void OnStart ()

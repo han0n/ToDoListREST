@@ -7,9 +7,9 @@
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
             <Frame CornerRadius="50" Padding="0"  Margin="0">
-                <Image Source="f1.jpg" WidthRequest="45" HeightRequest="45"/>
+                <Image x:Name="Avatar" WidthRequest="45" HeightRequest="45"/>
             </Frame>
-            <Label Text="David Góngora" Style="{StaticResource Rotulo}"  Margin="5,0,0,0" />
+            <Label x:Name="Nombre" Style="{StaticResource Rotulo}"  Margin="5,0,0,0" />
         </StackLayout>
     </NavigationPage.TitleView>
     

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TodoREST.Views.UserListPage"
+             xmlns:local="clr-namespace:TodoREST.ViewModels">
+
+
+    <Grid RowDefinitions="Auto, Auto"
+          Margin="50">
+        
+        <Grid Grid.Row="0"
+              ColumnDefinitions="Auto, 13*, Auto"
+              HorizontalOptions="CenterAndExpand">
+            
+            <Frame Grid.Column="0" CornerRadius="50" Padding="0"  Margin="0" HorizontalOptions="Start">
+                <ImageButton  Source="f1.jpg" WidthRequest="60" HeightRequest="60" Clicked="David_User"/>
+            </Frame>
+
+            <Frame Grid.Column="2" CornerRadius="50" Padding="0"  Margin="0" HorizontalOptions="End">
+                <ImageButton  Source="c1.jpg" WidthRequest="60" HeightRequest="60" Clicked="Carlos_User"/>
+            </Frame>
+            
+        </Grid>
+        
+        <Grid Grid.Row="1" Margin="40">
+            <Button x:Name="Entrar" Text="Acceder" Command="{Binding UsuarioCmd}" IsVisible="false" />   
+        </Grid>
+        
+        
+        <Label x:Name="Img" Text="{Binding usuarioAvatar, Mode=TwoWay}" IsVisible="False" />
+        <Label x:Name="Nom" Text="{Binding usuarioNombre, Mode=TwoWay}" IsVisible="False" />
+
+    </Grid>
+
+</ContentPage>
