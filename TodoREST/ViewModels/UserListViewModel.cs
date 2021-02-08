@@ -17,20 +17,9 @@ namespace TodoREST.ViewModels
         private string avatar;
         private string nombre;
 
-        private ObservableCollection<User> listaUsuarios = new ObservableCollection<User>();
-
         public UserListViewModel()
         {
-            this.listaUsuarios.Add(new User()
-            {
-                Avatar = "f1.jpg",
-                Nombre = "David Góngora"
-            });
-            this.listaUsuarios.Add(new User()
-            {
-                Avatar = "c1.jpg",
-                Nombre = "Carlos Fernández"
-            });
+            
         }
         #endregion
 
@@ -61,11 +50,17 @@ namespace TodoREST.ViewModels
         #endregion
 
         #region Comandos
-        public ICommand UsuarioCmd {
-            get
-            {
-                return new RelayCommand(Acceso);
-            }
+        public ICommand UsuarioCmd 
+        {
+            get { return new RelayCommand(Acceso); }
+        }
+        public ICommand ProfeCmd
+        {
+            get { return new RelayCommand(Profesor); }
+        }
+        public ICommand AlumnoCmd
+        {
+            get { return new RelayCommand(Alumno); }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -74,13 +69,25 @@ namespace TodoREST.ViewModels
         #region Métodos
         private void Acceso()
         {
-            foreach (var item in this.listaUsuarios.ToList())
+            if (usuarioNombre != null && usuarioAvatar != null)
             {
-                if(item.Nombre == usuarioNombre.ToString())
-                {
-                    Application.Current.MainPage.Navigation.PushAsync(new TodoListPage(usuarioAvatar, usuarioNombre));
-                }
+                Application.Current.MainPage.Navigation.PushAsync(new TodoListPage(usuarioAvatar, usuarioNombre));
             }
+            else
+            {
+                Application.Current.MainPage.Navigation.PushAsync(new TodoListPage("m1.jpg", "Monstruo de las Galletas"));
+            }
+             
+        }
+        private void Profesor()
+        {
+            usuarioAvatar = "f1.jpg";
+            usuarioNombre = "David Góngora";
+        }
+        private void Alumno()
+        {
+            usuarioAvatar = "c1.jpg";
+            usuarioNombre = "Carlos Fernández";
         }
         #endregion
 

@@ -5,30 +5,35 @@
              xmlns:local="clr-namespace:TodoREST.ViewModels">
 
 
-    <Grid RowDefinitions="Auto, Auto"
-          Margin="50">
+    <Grid RowDefinitions="Auto, Auto">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                <GradientStop Color="#2196F3" Offset="0" />
+                <GradientStop Color="Transparent" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         
         <Grid Grid.Row="0"
               ColumnDefinitions="Auto, 13*, Auto"
-              HorizontalOptions="CenterAndExpand">
+              HorizontalOptions="CenterAndExpand"
+              Margin="0,80,0,0">
             
-            <Frame Grid.Column="0" CornerRadius="50" Padding="0"  Margin="0" HorizontalOptions="Start">
-                <ImageButton  Source="f1.jpg" WidthRequest="60" HeightRequest="60" Clicked="David_User"/>
+            <Frame Grid.Column="0" CornerRadius="50" Padding="0"  Margin="0">
+                <ImageButton  Source="f1.jpg" WidthRequest="80" HeightRequest="80" Command="{Binding ProfeCmd}"/>
             </Frame>
 
-            <Frame Grid.Column="2" CornerRadius="50" Padding="0"  Margin="0" HorizontalOptions="End">
-                <ImageButton  Source="c1.jpg" WidthRequest="60" HeightRequest="60" Clicked="Carlos_User"/>
+            <Frame Grid.Column="2" CornerRadius="50" Padding="0"  Margin="0">
+                <ImageButton  Source="c1.jpg" WidthRequest="80" HeightRequest="80" Command="{Binding AlumnoCmd}"/>
             </Frame>
             
         </Grid>
-        
-        <Grid Grid.Row="1" Margin="40">
-            <Button x:Name="Entrar" Text="Acceder" Command="{Binding UsuarioCmd}" IsVisible="false" />   
+
+        <Grid Grid.Row="1" ColumnDefinitions="Auto, Auto, Auto" HorizontalOptions="Center">
+            <Frame Grid.Column="1" CornerRadius="50" Padding="8"  Margin="12" BackgroundColor="#2196F3">
+                <ImageButton  Source="https://i.imgur.com/lugQj25.png" BackgroundColor="#2196F3"  WidthRequest="24" HeightRequest="24" Command="{Binding UsuarioCmd}" />
+            </Frame>
         </Grid>
         
-        
-        <Label x:Name="Img" Text="{Binding usuarioAvatar, Mode=TwoWay}" IsVisible="False" />
-        <Label x:Name="Nom" Text="{Binding usuarioNombre, Mode=TwoWay}" IsVisible="False" />
 
     </Grid>
 

@@ -18,23 +18,6 @@ namespace TodoREST.Views
         {
             InitializeComponent();
             BindingContext = new UserListViewModel();
-
-        }
-
-        private void David_User(object sender, EventArgs e)
-        {
-            Nom.Text = "David Góngora";
-            Img.Text = "f1.jpg";
-            Entrar.IsVisible = true;
-            Entrar.Text = "Acceder como Profe";
-        }
-
-        private void Carlos_User(object sender, EventArgs e)
-        {
-            Nom.Text = "Carlos Fernández";
-            Img.Text = "c1.jpg";
-            Entrar.IsVisible = true;
-            Entrar.Text = "Acceder como Alumno";
         }
     }
 }
